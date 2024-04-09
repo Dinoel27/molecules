@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Planets Experience</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mrjs@latest/dist/mr.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/mrjs@latest/dist/mr.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- <script src="script.js"></script> -->
+</head>
+
+<body>
+
+    <!-- <canvas class="webgl"></canvas> -->
+    <mr-app debug="true">
+
+        <!-- try adding webgl inside mr-panel to see what happens  -->
+        <!-- <mr-panel></mr-panel> -->
+
+        <mr-panel data-position="0.2 -0.9 0" class="bar">
+            <mr-button class="button" onclick="toggleObjectVisibility()">on</mr-button>
+
+            <mr-button class="button" onclick="toggleObjectVisibilityOff()">off</mr-button>
+
+        </mr-panel>
+
+        <mr-entity data-comp-anchor="type:plane; label: table;">
+            <mr-model id="model" data-position="0 0 -0.75" class="molecule" src="./assets/5CEO/5ceo.glb" style="visibility:hidden;"></mr-model>
+        </mr-entity>
+
+        <!-- <mr-entity data-position="0 0 0" data-rotation="0 0 0"
+            data-comp-anchor="type: plane; label: floating;"></mr-entity> -->
+
+    </mr-app>
+</body>
+
+
+<script type="module" src="./script.js"></script>
+
+</html>
+
+<script>
+
+
+    function toggleObjectVisibility() {
+        var object = document.getElementById('model')
+
+        if (object.style.visibility === 'hidden' || object.style.visibility === '') {
+            object.style.visibility = 'visible'
+           
+        }
+
+    }
+
+    function toggleObjectVisibilityOff() {
+        var object = document.getElementById('model')
+            if (object.style.visibility === 'visible' || object.style.visibility === '') {
+                object.style.visibility = 'hidden'
+                console.log('object is visible')
+            }
+        }
+
+</script>
