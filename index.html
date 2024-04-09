@@ -18,10 +18,10 @@
         <!-- try adding webgl inside mr-panel to see what happens  -->
         <!-- <mr-panel></mr-panel> -->
 
-        <mr-panel data-position="0.2 0 0" class="bar">
-            <mr-button class="button" onclick="toggleObjectVisibility()">on</mr-button>
-            <mr-button class="button" onclick="toggleObjectVisibilityOff()">info</mr-button>
-            <mr-button class="button" onclick="toggleObjectVisibilityOff()">off</mr-button>
+        <mr-panel data-position="0.2 -0.25 0" class="bar">
+            <mr-button class="button" onclick="toggleObjectVisibility()" ondblclick="toggleObjectVisibilityOff()">on</mr-button>
+            <mr-button class="button" onclick="togglePanelVisibilityOff">info</mr-button>
+            <!-- <mr-button class="button" onclick="toggleObjectVisibilityOff()">off</mr-button> -->
 
         </mr-panel>
 
@@ -42,6 +42,7 @@
 
 <script>
 
+//Model Visibility Functions 
 
     function toggleObjectVisibility() {
         var object = document.getElementById('model')
@@ -60,5 +61,28 @@
                 console.log('object is visible')
             }
         }
+
+//Panel Visibility Functions 
+
+        function togglePanelVisibility() {
+        var panel = document.getElementById('panel');
+
+        if (panel.style.visibility === 'hidden' || panel.style.visibility === '') {
+            panel.style.visibility = 'visible';
+        }
+        // } else {
+        //     panel.style.visibility = 'hidden';
+        // }
+    }
+
+    function togglePanelVisibilityOff() {
+        if (panel.style.visibility === 'visible' || panel.style.visibility === '') {
+            panel.style.visibility = 'hidden';
+        }
+        // } else {
+        //     panel.style.visibility = 'visible';
+        // }
+    }
+    
 
 </script>
