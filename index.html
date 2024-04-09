@@ -22,11 +22,13 @@
             <mr-button class="button" onclick="togglePanelVisibility()">Info On</mr-button>
             <mr-button class="button" onclick="togglePanelVisibilityOff()">Info Off</mr-button>
 
+            <mr-button class="button" onclick="location.href='https://www.rcsb.org/structure/5CEO'">More</mr-button>
+
         </mr-panel>
 
         <!-- 5CEO Model Loading -->
-        <mr-entity data-comp-anchor="type:plane; label: table;">
-            <mr-model id="model" data-position="0 0.1 -0.65" class="molecule" src="./assets/5CEO/5ceo.glb" style="visibility:hidden;"></mr-model>
+        <mr-entity id="model" style="visibility:hidden;" data-comp-anchor="type:plane; label: table;">
+            <mr-model  data-position="0 0.1 -0.65" class="molecule" src="./assets/5CEO/5ceo.glb" ></mr-model>
         </mr-entity>
 
         <!-- Information Panel -->
