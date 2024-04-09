@@ -18,15 +18,15 @@
         <!-- try adding webgl inside mr-panel to see what happens  -->
         <!-- <mr-panel></mr-panel> -->
 
-        <mr-panel data-position="0.2 -0.9 0" class="bar">
+        <mr-panel data-position="0.2 0.5 0" class="bar">
             <mr-button class="button" onclick="toggleObjectVisibility()">on</mr-button>
-
+            <mr-button class="button" onclick="toggleObjectVisibilityOff()">info</mr-button>
             <mr-button class="button" onclick="toggleObjectVisibilityOff()">off</mr-button>
 
         </mr-panel>
 
         <mr-entity data-comp-anchor="type:plane; label: table;">
-            <mr-model id="model" data-position="0 0 -0.75" class="molecule" src="./assets/5CEO/5ceo.glb" style="visibility:hidden;"></mr-model>
+            <mr-model id="model" data-position="0 0.1 -0.55" class="molecule" src="./assets/5CEO/5ceo.glb" style="visibility:hidden;"></mr-model>
         </mr-entity>
 
         <!-- <mr-entity data-position="0 0 0" data-rotation="0 0 0"
