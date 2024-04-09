@@ -12,27 +12,32 @@
 
 <body>
 
-    <!-- <canvas class="webgl"></canvas> -->
     <mr-app debug="true">
 
-        <!-- try adding webgl inside mr-panel to see what happens  -->
-        <!-- <mr-panel></mr-panel> -->
+        <!-- Menu Panel -->
+        <mr-panel data-position="0.2 -0.45 0" class="bar">
+            <mr-button class="button" onclick="toggleObjectVisibility()">Molecule On</mr-button>
+            <mr-button class="button" onclick="toggleObjectVisibilityOff()">Molecule Off</mr-button>
 
-        <mr-panel data-position="0.2 -0.25 0" class="bar">
-            <mr-button class="button" onclick="toggleObjectVisibility()" ondblclick="toggleObjectVisibilityOff()">on</mr-button>
-            <mr-button class="button" onclick="togglePanelVisibilityOff">info</mr-button>
-            <!-- <mr-button class="button" onclick="toggleObjectVisibilityOff()">off</mr-button> -->
+            <mr-button class="button" onclick="togglePanelVisibility()">Info On</mr-button>
+            <mr-button class="button" onclick="togglePanelVisibilityOff()">Info Off</mr-button>
 
         </mr-panel>
 
+        <!-- 5CEO Model Loading -->
         <mr-entity data-comp-anchor="type:plane; label: table;">
-            <mr-model id="model" data-position="0 0.1 -0.55" class="molecule" src="./assets/5CEO/5ceo.glb" style="visibility:hidden;"></mr-model>
+            <mr-model id="model" data-position="0 0.1 -0.65" class="molecule" src="./assets/5CEO/5ceo.glb" style="visibility:hidden;"></mr-model>
         </mr-entity>
 
-        <!-- <mr-entity data-position="0 0 0" data-rotation="0 0 0"
-            data-comp-anchor="type: plane; label: floating;"></mr-entity> -->
+        <!-- Information Panel -->
+        <mr-entity>
+        <mr-panel id="panel" class="layout" style="visibility: hidden;">
+            <mr-text> hellow testing stuff</mr-text>
+        </mr-panel>
+    </mr-entity>
 
     </mr-app>
+
 </body>
 
 
@@ -83,6 +88,37 @@
         //     panel.style.visibility = 'visible';
         // }
     }
+
+    // let rig = document.querySelector('#rig')
+    //     let panels = document.querySelectorAll('.layout')
+
+    //     let frontIndex = 0
+
+    // function spread() {
+    //         let index = 0
+    //         let totalWidth = 0
+
+    //         let forwardVec = getForward(rig)
+            
+    //         for(let panel of panels) {
+    //             totalWidth += panel.width
+    //         }
+    //         for(let panel of panels) {
+    //             if(unfolded) {
+    //                 panel.object3D.position.set(0, 0, 0)
+    //             } else {
+    //                 panel.object3D.position.set(((panel.width) * index) - (totalWidth / panels.length), 0, ((index + 1) % 2) * 0.3)
+    //                 index += 1
+    //             }
+
+    //             panel.object3D.lookAt(forwardVec)
+
+
+    //         }
+
+    //         unfolded = !unfolded
+
+    //     }
     
 
 </script>
