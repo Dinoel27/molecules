@@ -15,14 +15,13 @@
     <mr-app>
 
         <!-- Menu Panel -->
-        <mr-panel data-position="0.2 -0.45 0" class="bar" style="position: fixed;">
-            <mr-button class="button" onclick="toggleObjectVisibility()">Molecule On</mr-button>
-            <mr-button class="button" onclick="toggleObjectVisibilityOff()">Molecule Off</mr-button>
+        <mr-panel data-position="0.2 -0.45 0.001" class="bar" style="position: fixed;">
 
-            <mr-button class="button" onclick="togglePanelVisibility()">Info On</mr-button>
-            <mr-button class="button" onclick="togglePanelVisibilityOff()">Info Off</mr-button>
+            <mr-button class="button" id="toggleObject" onclick="toggleObject()" value="OFF">Show Object: ON</mr-button>
+            <mr-button class="button" id="togglePanel" onclick="toggleInfo()" value="OFF">Show Info: ON</mr-button>
 
             <mr-button class="button" onclick="location.href='https://www.rcsb.org/structure/5CEO'">More</mr-button>
+
 
         </mr-panel>
 
@@ -31,11 +30,16 @@
             <mr-model  data-position="0 0.1 -0.65" class="molecule" src="./assets/5CEO/5ceo.glb" ></mr-model>
         </mr-entity>
 
-        <!-- Information Panel -->
-        <mr-entity data-position="0 0 -0.0001">
+        <!-- Information Panel
+        data-position="0 0 -0.0001"
+        
+            text properties:
+            data-position="-1 0 -1.5" data-rotation="0 30 0"
+    -->
+        <mr-entity>
         <mr-panel id="panel" class="layout" style="visibility: hidden;">
             <mr-text class="title">5CEO Molecule</mr-text>
-            <mr-text class="paragraph">
+            <mr-text class="paragraph" data-position="-1 0 -1.5">
                 DLK in complex with inhibitor 2-((6-(3,3-difluoropyrrolidin-1-yl)-4-(1-(oxetan-3-yl)piperidin-4-yl)pyridin-2-yl)amino)isonicotinonitrile\n
                 PDB DOI:  https://doi.org/10.2210/pdb5CEO/pdb
                 Classification: TRANSFERASE/TRANSFERASE Inhibitor
@@ -60,6 +64,46 @@
 
 <script>
 
+
+var logIndex = 0
+
+function toggleObject() 
+{
+    
+    if (logIndex === 0)
+    {
+        document.getElementById('toggleObject').innerText = 'Show Object: OFF'
+        toggleObjectVisibility()
+    console.log("button 0")
+    }
+    else
+    {
+        document.getElementById('toggleObject').innerText = 'Show Object: ON'
+        toggleObjectVisibilityOff()
+    console.log("button 1")
+    }
+    logIndex = 1 - logIndex
+}
+
+function toggleInfo() 
+{
+    
+    if (logIndex === 0)
+    {
+        document.getElementById('togglePanel').innerText = 'Show Info: OFF'
+        togglePanelVisibility()
+    console.log("button 0")
+    }
+    else
+    {
+        document.getElementById('togglePanel').innerText = 'Show Info: ON'
+        togglePanelVisibilityOff()
+    console.log("button 1")
+    }
+    logIndex = 1 - logIndex
+}
+
+
 //Model Visibility Functions 
 
     function toggleObjectVisibility() {
@@ -76,7 +120,6 @@
         var object = document.getElementById('model')
             if (object.style.visibility === 'visible' || object.style.visibility === '') {
                 object.style.visibility = 'hidden'
-                console.log('object is visible')
             }
         }
 
@@ -87,6 +130,7 @@
 
         if (panel.style.visibility === 'hidden' || panel.style.visibility === '') {
             panel.style.visibility = 'visible';
+       
       
     }
 }
@@ -97,6 +141,8 @@
         
     }
     }
+
+
     // let rig = document.querySelector('#rig')
     //     let panels = document.querySelectorAll('.layout')
 
@@ -106,7 +152,7 @@
     //         let index = 0
     //         let totalWidth = 0
 
-    //         let forwardVec = getForward(rig)
+    //         // let forwardVec = getForward(rig)
             
     //         for(let panel of panels) {
     //             totalWidth += panel.width
