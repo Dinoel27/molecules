@@ -43,7 +43,7 @@ overflow: hidden;
  
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .button
@@ -65,6 +65,7 @@ overflow: hidden;
     background: rgba(255, 255, 255, 0.55);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    height: 45vh;
 
 
     display: flex;
@@ -75,7 +76,7 @@ overflow: hidden;
  
     /* width: 25vw;
     height: 35vh; */
-
+    overflow: hidden;
    
 }
 
@@ -95,7 +96,7 @@ overflow: hidden;
     font-size: 26px;
     width: 30vw;
     margin-top: 30px;
-    transform: translate(2%, 45%);
+    transform: translate(2%, 5%);
     display: flex;
     justify-content: center;
 }
@@ -114,7 +115,7 @@ overflow: hidden;
     position: absolute;
 
     
-    transform: translate(2%, 60%);
+    transform: translate(2%, 30%);
     width: 30vw;
     margin: 20px;
     padding: 5%;
