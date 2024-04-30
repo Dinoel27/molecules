@@ -4,21 +4,19 @@
 <head>
     <meta charset="utf-8">
     <title>Molecule - 5CEO</title>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/mrjs@latest/dist/mr.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/mrjs@latest/dist/mr.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- <script src="script.js"></script> -->
 </head>
 
 <body>
 
-    <mr-app>
+    <mr-app debug="true">
 
         <!-- Menu Panel -->
         <mr-panel data-position="0.2 -0.45 0.001" class="bar" style="position: fixed;">
 
-            <mr-button class="button" id="toggleObject" onclick="toggleObject()" value="OFF">Show Object: ON</mr-button>
-            <mr-button class="button" id="togglePanel" onclick="toggleInfo()" value="OFF">Show Info: ON</mr-button>
+            <mr-button class="button" id="toggleObject" onclick="toggleObject()" value="OFF">molecule: ON</mr-button>
+            <mr-button class="button" id="togglePanel" onclick="toggleInfo()" value="OFF">info: ON</mr-button>
 
             <mr-button class="button" onclick="location.href='https://www.rcsb.org/structure/5CEO'">More</mr-button>
 
@@ -37,9 +35,10 @@
             data-position="-1 0 -1.5" data-rotation="0 30 0"
     -->
         <mr-entity>
-        <mr-panel id="panel" class="layout" style="visibility: hidden;">
+        <mr-panel id="panel" class="layout" style="visibility: hidden;" data-position="0.1 0.1 0">
+            <mr-div class="layout"> 
             <mr-text class="title">5CEO Molecule</mr-text>
-            <mr-text class="paragraph" data-position="-1 0 -1.5">
+            <mr-text class="paragraph">
                 DLK in complex with inhibitor 2-((6-(3,3-difluoropyrrolidin-1-yl)-4-(1-(oxetan-3-yl)piperidin-4-yl)pyridin-2-yl)amino)isonicotinonitrile\n
                 PDB DOI:  https://doi.org/10.2210/pdb5CEO/pdb
                 Classification: TRANSFERASE/TRANSFERASE Inhibitor
@@ -50,6 +49,7 @@
                 Deposited: 2015-07-07 Released: 2015-10-14 
                 Deposition Author(s): HARRIS, S.F., YIN, J.
             </mr-text>
+        </mr-div>
         </mr-panel>
     </mr-entity>
 
@@ -72,13 +72,13 @@ function toggleObject()
     
     if (logIndex === 0)
     {
-        document.getElementById('toggleObject').innerText = 'Show Object: OFF'
+        document.getElementById('toggleObject').innerText = 'molecule: OFF'
         toggleObjectVisibility()
     console.log("button 0")
     }
     else
     {
-        document.getElementById('toggleObject').innerText = 'Show Object: ON'
+        document.getElementById('toggleObject').innerText = 'molecule: ON'
         toggleObjectVisibilityOff()
     console.log("button 1")
     }
@@ -90,13 +90,13 @@ function toggleInfo()
     
     if (logIndex === 0)
     {
-        document.getElementById('togglePanel').innerText = 'Show Info: OFF'
+        document.getElementById('togglePanel').innerText = 'info: OFF'
         togglePanelVisibility()
     console.log("button 0")
     }
     else
     {
-        document.getElementById('togglePanel').innerText = 'Show Info: ON'
+        document.getElementById('togglePanel').innerText = 'info: ON'
         togglePanelVisibilityOff()
     console.log("button 1")
     }
