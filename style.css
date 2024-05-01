@@ -61,6 +61,8 @@ overflow: hidden;
 
 .layout
 {
+    overflow-x: hidden;
+    overflow-y: hidden; 
 
     background: rgba(255, 255, 255, 0.55);
     border-radius: 16px;
@@ -76,12 +78,13 @@ overflow: hidden;
  
     /* width: 25vw;
     height: 35vh; */
-    overflow: hidden;
-   
+    
 }
 
 .panel 
 {
+    overflow-x: hidden;
+    overflow-y: hidden; 
 
     background: rgba(255, 255, 255, 0.55);
     border-radius: 16px;
@@ -121,6 +124,8 @@ overflow: hidden;
     padding: 5%;
     overflow-y: none;
     /* white-space: wrap; */
+    overflow-x: hidden;
+    overflow-y: hidden; 
 }
 
 
