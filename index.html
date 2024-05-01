@@ -10,10 +10,10 @@
 
 <body>
 
-    <mr-app>
+    <mr-app debug="true">
       
         <!-- Menu Panel -->
-        <mr-panel data-position="0.2 -0.45 0.001" class="bar" style="position: fixed;">
+        <mr-panel data-position="0.2 -0.65 0.001" class="bar" style="position: fixed;">
 
             <mr-button class="button" id="toggleObject" onclick="toggleObject()" value="OFF">molecule: ON</mr-button>
             <mr-button class="button" id="togglePanel" onclick="toggleInfo()" value="OFF">info: ON</mr-button>
@@ -35,14 +35,15 @@
             data-position="-1 0 -1.5" data-rotation="0 30 0"
     -->
         <mr-entity>
-        <mr-panel id="panel" class="panel" style="visibility: hidden;" data-position="0.1 0.1 0">
+        <mr-panel id="panel" class="panel" style="visibility: hidden;" data-position="0.4 -0.2 0">
             <mr-div class="layout"> 
             <mr-text class="title">Histamine Molecule</mr-text>
             <mr-text class="paragraph">
                 3D Representation of a histamine binding site. Hard to believe that in a small anti-allergen pill there is a
                 mega structure of different elements. 
                 This 3D immersive visualizer is built with desire to learn more about Pharmacology and to practice my skill of 3D Design and Development.
-                This project has no affiliation to Nanome Inc, or my previous employers.
+                This project has no affiliation to Nanome Inc, or my previous employers. 
+                <a href="https://github.com/Volumetrics-io/mrjs?tab=readme-ov-file">Built with mr.js</a>
             </mr-text>
         </mr-div>
         </mr-panel>
