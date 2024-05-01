@@ -10,22 +10,22 @@
 
 <body>
 
-    <mr-app>
+    <mr-app debug="true">
       
         <!-- Menu Panel -->
         <mr-panel data-position="0.2 -0.4 0.001" class="bar" style="position: fixed;">
-
+            <mr-div class="bar"> 
             <mr-button class="button" id="toggleObject" onclick="toggleObject()" value="OFF">molecule: ON</mr-button>
             <mr-button class="button" id="togglePanel" onclick="toggleInfo()" value="OFF">info: ON</mr-button>
 
             <mr-button class="button" onclick="location.href='https://www.rcsb.org/structure/5CEO'">More</mr-button>
-
+        </mr-div>
 
         </mr-panel>
 
         <!-- 5CEO Model Loading -->
         <mr-entity id="model" style="visibility:hidden;" data-comp-anchor="type:plane; label: table;">
-            <mr-model  data-position="0 0.1 -0.45" class="molecule" src="./assets/histamine/1QFV.glb" ></mr-model>
+            <mr-model  data-position="0 0.1 -0.55" class="molecule" src="./assets/histamine/1QFV.glb" ></mr-model>
         </mr-entity>
 
         <!-- Information Panel
@@ -35,7 +35,7 @@
             data-position="-1 0 -1.5" data-rotation="0 30 0"
     -->
         <mr-entity>
-        <mr-panel id="panel" class="panel" style="visibility: hidden;" data-position="0.4 -0.2 0">
+        <mr-panel id="panel" class="panel" style="visibility: hidden;" data-position="0.28 0.3 0">
             <mr-div class="layout"> 
             <mr-text class="title">Histamine Molecule</mr-text>
             <mr-text class="paragraph">
